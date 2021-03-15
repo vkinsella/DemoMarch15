@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DemoMarch15
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
         }
-        static int Add(int x, int y)
+        public int Add(int x, int y)
 
         {
             return x + y;
