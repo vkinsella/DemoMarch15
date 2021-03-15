@@ -11,5 +11,14 @@ namespace DemoMarch15
         static void Main(string[] args)
         {
         }
+        static int Add(int x, int y)
+
+        {
+            return x + y;
+        }
+
+
     }
+
+
 }
