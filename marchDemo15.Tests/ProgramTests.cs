@@ -20,6 +20,13 @@ namespace marchDemo15.Tests
 
 
         }
+        public static void Add_Simple_Expected_2()
+        {
+            // comment
+            Program p1 = new Program();
+            Assert.AreEqual(5, p1.Add(2, 3));
 
+
+        }
     }
 }
