@@ -20,6 +20,7 @@ namespace marchDemo15.Tests
 
 
         }
+        [Test]
         public static void Add_Simple_Expected_2()
         {
             // comment
