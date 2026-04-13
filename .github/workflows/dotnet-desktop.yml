@@ -1,29 +1,21 @@
-## demo
-name: C# CI Pipeline
+name: C# CI
 
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:   # <-- this enables manual runs
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Get code
+        uses: actions/checkout@v4
 
-      - name: Setup .NET
+      - name: Install .NET
         uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: 8.0.x
-
-      - name: Cache NuGet packages
-        uses: actions/cache@v4
-        with:
-          path: ~/.nuget/packages
-          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
-          restore-keys: ${{ runner.os }}-nuget-
+        with: dotnet-version: 8.0.x
 
       - name: Restore
         run: dotnet restore
@@ -33,3 +25,4 @@ jobs:
 
       - name: Test
         run: dotnet test --no-build
+
